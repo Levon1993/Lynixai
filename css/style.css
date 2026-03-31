@@ -111,28 +111,29 @@ a.back-button:hover {
   transform: scale(1.05);
 }
 
-/* Logo im Header */
+/* Header Container */
 header {
+  background-color: #000; /* Header-Hintergrund */
+  padding: 10px 30px;
+}
+
+.header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
-  background-color: #000; /* oder deine Header-Farbe */
 }
 
+/* Logo */
 .logo {
-  height: 50px; /* Größe des Logos anpassen */
+  height: 50px;   /* Logo-Höhe fixieren */
+  width: auto;    /* Breite proportional */
+  display: block;
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
+/* Navbar Links */
 nav a {
-  margin-left: 20px;
-  color: white;
+  margin-left: 25px;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
   transition: 0.2s;
@@ -140,4 +141,21 @@ nav a {
 
 nav a:hover {
   color: #00ffd5;
+}
+
+/* Mobile Optional: Logo + Navbar auf kleinen Bildschirmen anpassen */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
 }
