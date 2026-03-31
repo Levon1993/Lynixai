@@ -117,23 +117,26 @@ header {
   padding: 10px 30px;
 }
 
+/* Container für Logo + Nav */
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Logo links, Nav rechts */
+  padding: 10px 30px;
+  background-color: #000;
 }
 
 /* Logo */
 .logo {
-  height: 50px;   /* Logo-Höhe fixieren */
-  width: auto;    /* Breite proportional */
+  height: 50px;
+  width: auto;
   display: block;
 }
 
 /* Navbar Links */
 nav a {
-  margin-left: 25px;
   color: #fff;
+  margin-left: 25px;
   text-decoration: none;
   font-weight: bold;
   transition: 0.2s;
@@ -143,13 +146,13 @@ nav a:hover {
   color: #00ffd5;
 }
 
-/* Mobile Optional: Logo + Navbar auf kleinen Bildschirmen anpassen */
+/* Optional: Responsive */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
     align-items: flex-start;
   }
-
+  
   nav {
     margin-top: 10px;
   }
