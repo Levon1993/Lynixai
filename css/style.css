@@ -176,33 +176,24 @@ h2 {
    RESPONSIVE / MOBILE
    ========================= */
 @media (max-width: 768px) {
+  /* Header nebeneinander, Content nicht verdeckt */
   .header-container {
-    flex-direction: column;  /* Logo oben, Navbar unten */
-    align-items: flex-start;
+    flex-direction: row;       /* Logo und Links in einer Reihe */
+    align-items: center;       /* vertikal mittig */
+    justify-content: space-between; /* Logo links, Links rechts */
   }
 
   .nav-links {
-    margin-left: 0;
-    margin-top: 10px;
-    flex-direction: column;
-    gap: 15px;
+    gap: 10px;                 /* Abstand zwischen Links */
+    overflow-x: auto;           /* scrollbar, falls zu viele Links */
+    white-space: nowrap;         /* verhindert Umbruch */
   }
 
   .nav-links a {
-    font-size: 16px;
-  }
-}
-  }
-
-  p {
-    font-size: 14px;
+    font-size: 14px;            /* kleinere Schrift für Handys */
+    flex-shrink: 0;             /* Links werden nicht zusammengeschrumpft */
   }
 
-  h1 {
-    font-size: 24px;
+  .logo {
+    height: 40px;               /* Logo etwas kleiner auf Handy */
   }
-
-  h2 {
-    font-size: 20px;
-  }
-}
