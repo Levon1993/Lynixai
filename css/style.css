@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: white;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  position: fixed;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #00ffd5;
+}
+
+.hero {
+  height: 100vh;
+  background: url('../images/hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.hero h1 {
+  font-size: 60px;
+  max-width: 600px;
+}
+
+.section {
+  padding: 100px 50px;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 15px;
+  flex: 1;
+  min-width: 250px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+footer {
+  padding: 50px;
+  text-align: center;
+  background: #000;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  background: #00ffd5;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #1a1a1a;
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
