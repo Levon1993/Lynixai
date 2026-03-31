@@ -184,12 +184,14 @@ h2 {
   .nav-links {
     margin-left: 0;
     margin-top: 10px;
-    flex-direction: column; /* Links untereinander */
+    flex-direction: column;
     gap: 15px;
   }
 
   .nav-links a {
-    font-size: 16px;  /* größer für Touchscreen */
+    font-size: 16px;
+  }
+}
   }
 
   p {
