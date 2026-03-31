@@ -1,2 +1,0 @@
-# Lynixai
-AI Agency
