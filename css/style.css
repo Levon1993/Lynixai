@@ -92,3 +92,21 @@ input, textarea {
   color: white;
   border-radius: 8px;
 }
+
+/* BACK BUTTON */
+a.back-button {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 12px 25px;
+  background: #00ffd5;
+  color: #000;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+a.back-button:hover {
+  transform: scale(1.05);
+}
