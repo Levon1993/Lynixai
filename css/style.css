@@ -111,30 +111,27 @@ a.back-button:hover {
   transform: scale(1.05);
 }
 
-/* Header Container */
-header {
-  background-color: #000; /* Header-Hintergrund */
-  padding: 10px 30px;
-}
-
-/* Container für Logo + Nav */
+/* =========================
+   HEADER + LOGO + NAVBAR
+   ========================= */
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Logo links, Navbar rechts auf Desktop */
   padding: 10px 30px;
   background-color: #000;
 }
 
 .logo {
-  height: 50px;
-  width: auto;
+  height: 50px;    /* Höhe des Logos */
+  width: auto;     /* proportional */
+  display: block;
 }
 
-/* DER WICHTIGE TRICK */
 .nav-links {
-  margin-left: auto; /* Schiebt die Links nach rechts */
+  margin-left: auto;  /* schiebt die Links nach rechts */
   display: flex;
-  gap: 25px; /* Abstand zwischen den Links */
+  gap: 25px;         /* Abstand zwischen Links */
 }
 
 .nav-links a {
@@ -148,17 +145,62 @@ header {
   color: #00ffd5;
 }
 
-/* Optional: Responsive */
+/* =========================
+   TEXT & HERO-BILDER
+   ========================= */
+p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.hero img {
+  width: 100%;       /* passt sich Bildschirmbreite an */
+  max-width: 1200px; /* nicht zu groß */
+  height: auto;      /* proportional */
+  display: block;
+  margin: 0 auto;    /* zentriert */
+}
+
+/* =========================
+   RESPONSIVE / MOBILE
+   ========================= */
 @media (max-width: 768px) {
   .header-container {
-    flex-direction: column;
+    flex-direction: column;  /* Logo oben, Navbar unten */
     align-items: flex-start;
   }
 
   .nav-links {
     margin-left: 0;
     margin-top: 10px;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column; /* Links untereinander */
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 16px;  /* größer für Touchscreen */
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
   }
 }
