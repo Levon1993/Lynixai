@@ -197,3 +197,41 @@ h2 {
   .logo {
     height: 40px;               /* Logo etwas kleiner auf Handy */
   }
+
+/* COOKIE BANNER */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,255,213,0.2);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 9999;
+  max-width: 90%;
+}
+
+.cookie-banner a {
+  color: #00ffd5;
+  text-decoration: underline;
+}
+
+.cookie-banner button {
+  background: #00ffd5;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.cookie-banner button:hover {
+  transform: scale(1.05);
+}
