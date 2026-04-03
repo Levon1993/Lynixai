@@ -80,13 +80,17 @@ document.addEventListener("DOMContentLoaded", function() {
   const banner = document.getElementById("cookieBanner");
   const acceptBtn = document.getElementById("acceptCookies");
 
+  // Banner nur anzeigen, wenn nicht akzeptiert
   if (!localStorage.getItem("cookiesAccepted")) {
-    banner.style.display = "flex"; // Banner sichtbar machen
+    setTimeout(() => { // kleine Verzögerung für nicer Effekt
+      banner.classList.add("show"); 
+    }, 200); 
   }
 
+  // Klick auf Akzeptieren
   acceptBtn.addEventListener("click", function() {
     localStorage.setItem("cookiesAccepted", "true");
-    banner.style.display = "none"; // Banner ausblenden
+    banner.classList.remove("show"); // Banner rutscht wieder runter
   });
 });
 </script>
