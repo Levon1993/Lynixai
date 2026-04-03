@@ -198,9 +198,10 @@ h2 {
     height: 40px;               /* Logo etwas kleiner auf Handy */
   }
 
+/* COOKIE-BANNER */
 .cookie-banner {
   position: fixed;
-  bottom: 20px;
+  bottom: -150px; /* Start außerhalb des Bildschirms */
   left: 50%;
   transform: translateX(-50%);
   background: #1a1a1a;
@@ -208,11 +209,22 @@ h2 {
   padding: 15px 25px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,255,213,0.2);
-  display: none;  /* Banner startet unsichtbar */
+  display: flex;
   align-items: center;
   gap: 15px;
   z-index: 9999;
   max-width: 90%;
+  opacity: 0;          /* unsichtbar starten */
+  transition: all 0.5s ease; /* sanfte Animation */
+}
+
+.cookie-banner.show {
+  bottom: 20px;  /* Banner rutscht hoch */
+  opacity: 1;    /* wird sichtbar */
+}
+
+.cookie-banner p {
+  margin: 0;
 }
 
 .cookie-banner a {
