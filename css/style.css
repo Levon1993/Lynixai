@@ -201,9 +201,9 @@ h2 {
 /* COOKIE-BANNER */
 .cookie-banner {
   position: fixed;
-  bottom: 20px;         /* Startposition für Slide-Up */
+  bottom: 20px; /* immer sichtbar am unteren Rand */
   left: 50%;
-  transform: translateX(-50%) translateY(50px); /* start leicht unten */
+  transform: translateX(-50%) translateY(50px); /* leicht nach unten starten */
   background: #1a1a1a;
   color: white;
   padding: 15px 25px;
@@ -214,13 +214,15 @@ h2 {
   gap: 15px;
   z-index: 9999;
   max-width: 90%;
-  opacity: 0;          /* unsichtbar starten */
-  transition: all 0.5s ease; /* sanfte Animation */
+  opacity: 0;
+  pointer-events: none; /* verhindern, dass unsichtbares Banner klickbar ist */
+  transition: all 0.5s ease;
 }
 
 .cookie-banner.show {
-  transform: translateX(-50%) translateY(0); /* hochgleiten */
-  opacity: 1;                               /* sichtbar */
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto; /* Banner wieder klickbar */
 }
 
 .cookie-banner p {
