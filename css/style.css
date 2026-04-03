@@ -198,12 +198,12 @@ h2 {
     height: 40px;               /* Logo etwas kleiner auf Handy */
   }
 
-/* COOKIE-BANNER */
+<style>
 .cookie-banner {
   position: fixed;
-  bottom: 20px; /* immer sichtbar am unteren Rand */
+  bottom: 20px;
   left: 50%;
-  transform: translateX(-50%) translateY(50px); /* leicht nach unten starten */
+  transform: translateX(-50%) translateY(50px);
   background: #1a1a1a;
   color: white;
   padding: 15px 25px;
@@ -215,25 +215,16 @@ h2 {
   z-index: 9999;
   max-width: 90%;
   opacity: 0;
-  pointer-events: none; /* verhindern, dass unsichtbares Banner klickbar ist */
-  transition: all 0.5s ease;
+  pointer-events: none;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
-
 .cookie-banner.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
-  pointer-events: auto; /* Banner wieder klickbar */
+  pointer-events: auto;
 }
-
-.cookie-banner p {
-  margin: 0;
-}
-
-.cookie-banner a {
-  color: #00ffd5;
-  text-decoration: underline;
-}
-
+.cookie-banner p { margin: 0; }
+.cookie-banner a { color: #00ffd5; text-decoration: underline; }
 .cookie-banner button {
   background: #00ffd5;
   color: black;
@@ -244,7 +235,5 @@ h2 {
   font-weight: bold;
   transition: 0.2s;
 }
-
-.cookie-banner button:hover {
-  transform: scale(1.05);
-}
+.cookie-banner button:hover { transform: scale(1.05); }
+</style>
