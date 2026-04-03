@@ -198,7 +198,6 @@ h2 {
     height: 40px;               /* Logo etwas kleiner auf Handy */
   }
 
-<style>
 .cookie-banner {
   position: fixed;
   bottom: 20px;
@@ -218,22 +217,9 @@ h2 {
   pointer-events: none;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
+
 .cookie-banner.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
-.cookie-banner p { margin: 0; }
-.cookie-banner a { color: #00ffd5; text-decoration: underline; }
-.cookie-banner button {
-  background: #00ffd5;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.2s;
-}
-.cookie-banner button:hover { transform: scale(1.05); }
-</style>
