@@ -75,20 +75,29 @@
   <script src="js/script.js"></script>
 <script src="//code.tidio.co/tw6kow2mch1fa9wt641dgrq0m3jitlnj.js" async></script>
 
+<!-- COOKIE-BANNER -->
+<div id="cookieBanner" class="cookie-banner">
+  <p>Wir verwenden Cookies, um deine Erfahrung zu verbessern. <a href="privacy.html">Mehr Infos</a></p>
+  <button id="acceptCookies">Akzeptieren</button>
+</div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const banner = document.getElementById("cookieBanner");
   const acceptBtn = document.getElementById("acceptCookies");
 
-  // Banner sofort anzeigen, wenn noch nicht akzeptiert
+  // Banner sofort zeigen, wenn nicht akzeptiert
   if (!localStorage.getItem("cookiesAccepted")) {
-    banner.classList.add("show"); 
+    // Kleine Verzögerung für sanften Effekt
+    setTimeout(() => {
+      banner.classList.add("show");
+    }, 100);
   }
 
   // Klick auf Akzeptieren
   acceptBtn.addEventListener("click", function() {
     localStorage.setItem("cookiesAccepted", "true");
-    banner.classList.remove("show"); // Banner verschwindet wieder
+    banner.classList.remove("show");
   });
 });
 </script>
