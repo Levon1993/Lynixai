@@ -86,12 +86,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const banner = document.getElementById("cookieBanner");
   const acceptBtn = document.getElementById("acceptCookies");
 
-  // Banner sofort zeigen, wenn nicht akzeptiert
+  // Banner anzeigen, wenn noch nicht akzeptiert
   if (!localStorage.getItem("cookiesAccepted")) {
-    // Kleine Verzögerung für sanften Effekt
     setTimeout(() => {
       banner.classList.add("show");
-    }, 100);
+    }, 100); // kleiner Delay für Animation
   }
 
   // Klick auf Akzeptieren
