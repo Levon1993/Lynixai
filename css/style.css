@@ -201,9 +201,9 @@ h2 {
 /* COOKIE-BANNER */
 .cookie-banner {
   position: fixed;
-  bottom: -150px; /* Start außerhalb des Bildschirms */
+  bottom: 20px;         /* Startposition für Slide-Up */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(50px); /* start leicht unten */
   background: #1a1a1a;
   color: white;
   padding: 15px 25px;
@@ -219,8 +219,8 @@ h2 {
 }
 
 .cookie-banner.show {
-  bottom: 20px;  /* Banner rutscht hoch */
-  opacity: 1;    /* wird sichtbar */
+  transform: translateX(-50%) translateY(0); /* hochgleiten */
+  opacity: 1;                               /* sichtbar */
 }
 
 .cookie-banner p {
