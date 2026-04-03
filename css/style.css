@@ -198,7 +198,6 @@ h2 {
     height: 40px;               /* Logo etwas kleiner auf Handy */
   }
 
-/* COOKIE BANNER */
 .cookie-banner {
   position: fixed;
   bottom: 20px;
@@ -209,7 +208,7 @@ h2 {
   padding: 15px 25px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,255,213,0.2);
-  display: flex;
+  display: none;  /* Banner startet unsichtbar */
   align-items: center;
   gap: 15px;
   z-index: 9999;
@@ -234,15 +233,4 @@ h2 {
 
 .cookie-banner button:hover {
   transform: scale(1.05);
-}
-
-.cookie-banner {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.5s ease;
-}
-
-.cookie-banner.show {
-  opacity: 1;
-  transform: translateY(0);
 }
