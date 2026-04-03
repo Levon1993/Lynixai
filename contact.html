@@ -6,14 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lynix AI</title>
 
-  <!-- CSS verbinden -->
   <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
 
-  <!-- HEADER / NAVBAR -->
+<!-- HEADER -->
 <header>
   <div class="header-container">
     <a href="index.html" class="logo-link">
@@ -28,13 +26,7 @@
   </div>
 </header>
 
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>Kontakt</title>
-</head>
-<body>
-
+<!-- KONTAKTFORMULAR -->
 <form id="contactForm">
   <input type="text" name="name" placeholder="Name" required>
   <input type="email" name="email" placeholder="Email" required>
@@ -44,7 +36,7 @@
 
 <p id="successMessage" style="display:none;">Danke! Nachricht gesendet.</p>
 
-<!-- 👉 HIER kommt das JavaScript hin -->
+<!-- SCRIPT GANZ UNTEN -->
 <script>
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
