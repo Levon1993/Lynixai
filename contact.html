@@ -26,17 +26,22 @@
   </div>
 </header>
 
-<!-- KONTAKTFORMULAR -->
-<form id="contactForm">
-  <input type="text" name="name" placeholder="Name" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <textarea name="message" placeholder="Nachricht" required></textarea>
-  <button type="submit">Senden</button>
-</form>
+<section class="contact-section">
+  <h1>Kontakt</h1>
+  <p>Schreib uns eine Nachricht – wir melden uns schnellstmöglich.</p>
 
-<p id="successMessage" style="display:none;">Danke! Nachricht gesendet.</p>
+  <form id="contactForm" class="contact-form">
+    <input type="text" name="name" placeholder="Dein Name" required>
+    <input type="email" name="email" placeholder="Deine Email" required>
+    <textarea name="message" placeholder="Deine Nachricht" required></textarea>
+    <button type="submit">Nachricht senden</button>
+  </form>
 
-<!-- SCRIPT GANZ UNTEN -->
+  <div id="successMessage" class="success-message">
+    ✅ Danke! Deine Nachricht wurde gesendet.
+  </div>
+</section>
+
 <script>
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
@@ -47,15 +52,14 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     method: "POST",
     body: formData
   })
-  .then(response => {
+  .then(() => {
     document.getElementById("successMessage").style.display = "block";
     document.getElementById("contactForm").reset();
   })
-  .catch(error => {
+  .catch(() => {
     alert("Fehler beim Senden");
   });
 });
 </script>
-
 </body>
 </html>
