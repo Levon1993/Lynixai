@@ -198,28 +198,44 @@ h2 {
     height: 40px;               /* Logo etwas kleiner auf Handy */
   }
 
-.cookie-banner {
+#cookie-banner {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%) translateY(50px);
-  background: #1a1a1a;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,255,213,0.2);
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  z-index: 9999;
-  max-width: 90%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #222;
+  color: #fff;
+  padding: 15px;
+  transform: translateY(100%);
   opacity: 0;
-  pointer-events: none;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: all 0.5s ease;
+  z-index: 9999;
 }
 
-.cookie-banner.show {
-  transform: translateX(-50%) translateY(0);
+.cookie-content {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cookie-banner button {
+  background: #4CAF50;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Animation */
+.cookie-show {
+  transform: translateY(0);
   opacity: 1;
-  pointer-events: auto;
+}
+
+.cookie-hidden {
+  transform: translateY(100%);
+  opacity: 0;
 }
