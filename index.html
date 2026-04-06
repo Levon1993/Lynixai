@@ -83,22 +83,21 @@
 </div>
 
 <script>
-  window.addEventListener("load", function () {
-    const banner = document.getElementById("cookie-banner");
+window.addEventListener("load", function () {
+  const banner = document.getElementById("cookie-banner");
+  const button = document.getElementById("accept-cookies");
 
-    // Prüfen ob schon akzeptiert
-    if (!localStorage.getItem("cookiesAccepted")) {
-      setTimeout(() => {
-        banner.classList.remove("cookie-hidden");
-        banner.classList.add("cookie-show");
-      }, 500);
-    }
-  });
+  if (!localStorage.getItem("cookiesAccepted")) {
+    setTimeout(() => {
+      banner.classList.add("cookie-show");
+    }, 500);
+  }
 
-  document.getElementById("accept-cookies").addEventListener("click", function () {
+  button.addEventListener("click", function () {
     localStorage.setItem("cookiesAccepted", "true");
-    document.getElementById("cookie-banner").classList.remove("cookie-show");
+    banner.classList.remove("cookie-show");
   });
+});
 </script>
   
 </body>  
