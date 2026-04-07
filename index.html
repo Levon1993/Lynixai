@@ -93,10 +93,10 @@ window.addEventListener("load", function () {
     }, 500);
   }
 
-  button.addEventListener("click", function () {
-    localStorage.setItem("cookiesAccepted", "true");
-    banner.classList.remove("cookie-show");
-  });
+button.addEventListener("click", function () {
+  localStorage.setItem("cookiesAccepted", "true");
+  banner.style.display = "none";
+});
 });
 </script>
   
