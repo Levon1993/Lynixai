@@ -197,6 +197,7 @@ h2 {
   .logo {
     height: 40px;               /* Logo etwas kleiner auf Handy */
   }
+    }
 
 #cookie-banner {
   position: fixed;
