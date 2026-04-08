@@ -75,41 +75,68 @@
   <script src="js/script.js"></script>
 <script src="//code.tidio.co/tw6kow2mch1fa9wt641dgrq0m3jitlnj.js" async></script>
 
-<div id="cookie-banner" style="
-  position:fixed;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#222;
-  color:#fff;
-  padding:20px;
-  border-radius:10px;
-  z-index:9999;
-  display:none;
-">
-  Diese Website verwendet Cookies.
-  <button onclick="acceptCookies()" style="
-    margin-left:15px;
-    padding:10px 15px;
-    background:#00ffd5;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-  ">OK</button>
+<!-- Cookie Banner -->
+<div id="cookie-banner" class="cookie-banner">
+  <p>
+    Diese Website verwendet Cookies, um die Nutzererfahrung zu verbessern.
+    <button id="accept-cookies">Akzeptieren</button>
+  </p>
 </div>
 
-<script>
-function acceptCookies() {
-  localStorage.setItem("cookiesAccepted", "true");
-  document.getElementById("cookie-banner").style.display = "none";
+<style>
+.cookie-banner {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 20, 0.95);
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-family: sans-serif;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  transition: all 0.5s ease;
+  opacity: 0;
+  z-index: 9999;
 }
 
-window.onload = function() {
-  if (!localStorage.getItem("cookiesAccepted")) {
-    document.getElementById("cookie-banner").style.display = "block";
-  }
+.cookie-banner.show {
+  bottom: 20px;
+  opacity: 1;
 }
+
+.cookie-banner button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cookie-banner button:hover {
+  background: #45a049;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const banner = document.getElementById("cookie-banner");
+  const button = document.getElementById("accept-cookies");
+
+  // Check if already accepted
+  if (!localStorage.getItem("cookiesAccepted")) {
+    setTimeout(() => {
+      banner.classList.add("show");
+    }, 500);
+  }
+
+  button.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "true");
+    banner.classList.remove("show");
+  });
+});
 </script>
-  
 </body>  
 </html>
