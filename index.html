@@ -75,10 +75,41 @@
   <script src="js/script.js"></script>
 <script src="//code.tidio.co/tw6kow2mch1fa9wt641dgrq0m3jitlnj.js" async></script>
 
-  <div id="cookie-banner" class="cookie-hidden">
-  <p>Diese Website verwendet Cookies.</p>
-  <button id="accept-cookies">Akzeptieren</button>
+<div id="cookie-banner" style="
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#222;
+  color:#fff;
+  padding:20px;
+  border-radius:10px;
+  z-index:9999;
+  display:none;
+">
+  Diese Website verwendet Cookies.
+  <button onclick="acceptCookies()" style="
+    margin-left:15px;
+    padding:10px 15px;
+    background:#00ffd5;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+  ">OK</button>
 </div>
+
+<script>
+function acceptCookies() {
+  localStorage.setItem("cookiesAccepted", "true");
+  document.getElementById("cookie-banner").style.display = "none";
+}
+
+window.onload = function() {
+  if (!localStorage.getItem("cookiesAccepted")) {
+    document.getElementById("cookie-banner").style.display = "block";
+  }
+}
+</script>
   
 </body>  
 </html>
