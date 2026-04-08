@@ -75,30 +75,24 @@
   <script src="js/script.js"></script>
 <script src="//code.tidio.co/tw6kow2mch1fa9wt641dgrq0m3jitlnj.js" async></script>
 
-<div id="cookie-banner" class="cookie-hidden">
-  <div class="cookie-content">
-    <p>Diese Website verwendet Cookies, um deine Erfahrung zu verbessern.</p>
-    <button id="accept-cookies">OK</button>
-    <a href="privacy.html" id="more-cookies" target="_blank">Mehr anzeigen</a>
-  </div>
-</div>
 <script>
 window.addEventListener("load", function () {
   const banner = document.getElementById("cookie-banner");
   const button = document.getElementById("accept-cookies");
 
-if (!localStorage.getItem("cookiesAccepted")) {
-  setTimeout(() => {
-    banner.classList.remove("cookie-hidden"); // 👈 WICHTIG
-    banner.classList.add("cookie-show");
-  }, 500);
-}
+  if (!localStorage.getItem("cookiesAccepted")) {
+    setTimeout(() => {
+      banner.classList.remove("cookie-hidden");
+      banner.classList.add("cookie-show");
+    }, 500);
+  }
 
-button.addEventListener("click", function () {
-  localStorage.setItem("cookiesAccepted", "true");
-  banner.classList.remove("cookie-show");
-  banner.classList.add("cookie-hidden"); // optional sauber
-});
+  button.addEventListener("click", function () {
+    localStorage.setItem("cookiesAccepted", "true");
+    banner.classList.remove("cookie-show");
+    banner.classList.add("cookie-hidden");
+  });
+}); // 👈 DIESE KLAMMER HAT GEFEHLT
 </script>
   
 </body>  
