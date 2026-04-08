@@ -215,3 +215,6 @@ h2 {
   opacity: 1; /* sichtbar sofort */
   transition: none;
 }
+.cookie-hidden { display: none; }
+.cookie-show { display: block; }
+}
