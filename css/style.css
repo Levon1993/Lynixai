@@ -198,22 +198,3 @@ h2 {
     height: 40px;               /* Logo etwas kleiner auf Handy */
   }
     }
-
-#cookie-banner {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%); /* nur horizontal zentrieren */
-  width: 90%;
-  max-width: 900px;
-  background: #222;
-  color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  z-index: 9999;
-  opacity: 1; /* sichtbar sofort */
-  transition: none;
-}
-.cookie-hidden { display: none; }
-.cookie-show { display: block; }
