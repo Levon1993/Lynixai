@@ -75,5 +75,84 @@
   <script src="js/script.js"></script>
 <script src="//code.tidio.co/tw6kow2mch1fa9wt641dgrq0m3jitlnj.js" async></script>
 
+  <!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Meine GitHub-Seite</title>
+  <style>
+    /* Cookie Banner Styles */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      color: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      flex-wrap: wrap;
+      font-family: sans-serif;
+    }
+    #cookie-banner p {
+      margin: 0;
+      padding-right: 10px;
+      flex: 1 1 60%;
+    }
+    #cookie-banner .buttons {
+      display: flex;
+      gap: 10px;
+      flex: 1 1 35%;
+      justify-content: flex-end;
+    }
+    #cookie-banner button {
+      padding: 8px 12px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    #accept-btn {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #more-btn {
+      background-color: #f1f1f1;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner">
+    <p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Weitere Informationen finden Sie in unserer <a href="privacy.html" style="color: #4CAF50; text-decoration: underline;">Datenschutzerklärung</a>.</p>
+    <div class="buttons">
+      <button id="more-btn">Mehr anzeigen</button>
+      <button id="accept-btn">Akzeptieren</button>
+    </div>
+  </div>
+
+  <script>
+    // Prüfen, ob Cookies schon akzeptiert wurden
+    if(localStorage.getItem('cookiesAccepted') === 'true'){
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    // Akzeptieren Button
+    document.getElementById('accept-btn').addEventListener('click', function(){
+      localStorage.setItem('cookiesAccepted', 'true');
+      document.getElementById('cookie-banner').style.display = 'none';
+    });
+
+    // Mehr anzeigen Button
+    document.getElementById('more-btn').addEventListener('click', function(){
+      window.location.href = 'privacy.html';
+    });
+  </script>
+
 </body>  
 </html>
