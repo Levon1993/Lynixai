@@ -76,36 +76,43 @@
 <script src="//code.tidio.co/tw6kow2mch1fa9wt641dgrq0m3jitlnj.js" async></script>
 
 <!-- Cookie Banner -->
-<div id="cookie-banner" class="cookie-banner">
-  <p>
-    Diese Website verwendet Cookies, um die Nutzererfahrung zu verbessern.
-    <button id="accept-cookies">Akzeptieren</button>
-  </p>
+<div id="cookie-banner">
+  <span>
+    Diese Website verwendet Cookies.
+  </span>
+  <button id="accept-cookies">OK</button>
 </div>
 
 <style>
-.cookie-banner {
+#cookie-banner {
   position: fixed;
-  bottom: -100px;
   left: 50%;
-  transform: translateX(-50%);
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  width: 90%;
+  max-width: 400px;
+
   background: rgba(20, 20, 20, 0.95);
-  color: #fff;
-  padding: 15px 20px;
+  color: white;
+  padding: 15px;
   border-radius: 12px;
+  text-align: center;
+
   font-family: sans-serif;
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-  transition: all 0.5s ease;
+
   opacity: 0;
-  z-index: 9999;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+
+  z-index: 99999;
 }
 
-.cookie-banner.show {
-  bottom: 20px;
+#cookie-banner.show {
+  transform: translate(-50%, -20px);
   opacity: 1;
 }
 
-.cookie-banner button {
+#cookie-banner button {
   margin-left: 10px;
   padding: 6px 12px;
   border: none;
@@ -114,22 +121,19 @@
   border-radius: 6px;
   cursor: pointer;
 }
-
-.cookie-banner button:hover {
-  background: #45a049;
-}
 </style>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
   const banner = document.getElementById("cookie-banner");
   const button = document.getElementById("accept-cookies");
 
-  // Check if already accepted
+  if (!banner || !button) return;
+
   if (!localStorage.getItem("cookiesAccepted")) {
     setTimeout(() => {
       banner.classList.add("show");
-    }, 500);
+    }, 300);
   }
 
   button.addEventListener("click", () => {
