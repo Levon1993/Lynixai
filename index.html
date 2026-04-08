@@ -95,7 +95,7 @@ window.addEventListener("load", function () {
 
 button.addEventListener("click", function () {
   localStorage.setItem("cookiesAccepted", "true");
-  banner.style.display = "none";
+banner.classList.remove("cookie-show");
 });
 });
 </script>
